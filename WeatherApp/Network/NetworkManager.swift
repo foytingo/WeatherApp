@@ -51,7 +51,7 @@ class NetworkManager {
                         case 1003:
                             completion(nil, WAError.emptyCityParameter)
                         default:
-                            completion(nil,WAError.invalidResponseCode)
+                            completion(nil,WAError.unknownErrorCode)
                         }
                     } else {
                         completion(nil,WAError.invalidErrorResponseModel)

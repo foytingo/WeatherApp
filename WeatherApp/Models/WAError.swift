@@ -11,7 +11,7 @@ enum WAError: LocalizedError, Equatable {
     
     case emptyApiKey
     case invalidApiKey
-    case invalidResponseCode
+    case unknownErrorCode
     case invalidCityParameter
     case emptyCityParameter
     case invalidResponseModel
@@ -24,8 +24,8 @@ enum WAError: LocalizedError, Equatable {
             return "Api key not provided."
         case .invalidApiKey:
             return "Api key provided is invalid."
-        case .invalidResponseCode:
-            return "Response code is invalid."
+        case .unknownErrorCode:
+            return "Error code is unknown."
         case .invalidCityParameter:
             return "No location found matching your typed city."
         case .emptyCityParameter:

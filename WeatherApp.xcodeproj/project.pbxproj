@@ -13,7 +13,6 @@
 		462A527C256E5C630098C110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462A527A256E5C630098C110 /* Main.storyboard */; };
 		462A527E256E5C650098C110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462A527D256E5C650098C110 /* Assets.xcassets */; };
 		462A5281256E5C650098C110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462A527F256E5C650098C110 /* LaunchScreen.storyboard */; };
-		462A528C256E5C650098C110 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A528B256E5C650098C110 /* WeatherAppTests.swift */; };
 		462A5297256E5C650098C110 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A5296256E5C650098C110 /* WeatherAppUITests.swift */; };
 		462A52A8256E5EFB0098C110 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52A7256E5EFB0098C110 /* NetworkManagerTests.swift */; };
 		462A52AD256E5F4B0098C110 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52AC256E5F4B0098C110 /* NetworkManager.swift */; };
@@ -51,7 +50,6 @@
 		462A5280256E5C650098C110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		462A5282256E5C650098C110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		462A5287256E5C650098C110 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		462A528B256E5C650098C110 /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		462A528D256E5C650098C110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		462A5292256E5C650098C110 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		462A5296256E5C650098C110 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
@@ -113,18 +111,13 @@
 		462A5273256E5C630098C110 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				462A5274256E5C630098C110 /* AppDelegate.swift */,
-				462A5276256E5C630098C110 /* SceneDelegate.swift */,
-				462A5278256E5C630098C110 /* ViewController.swift */,
-				462A527A256E5C630098C110 /* Main.storyboard */,
-				462A527D256E5C650098C110 /* Assets.xcassets */,
-				462A527F256E5C650098C110 /* LaunchScreen.storyboard */,
+				462A52D6256E9D2D0098C110 /* Supporting Files */,
+				462A52D7256E9D370098C110 /* Controllers */,
+				462A52DB256E9D450098C110 /* Storyboards */,
+				462A52D2256E9D1C0098C110 /* Helpers */,
+				462A52D1256E9D100098C110 /* Network */,
+				462A52CD256E9CFA0098C110 /* Models */,
 				462A5282256E5C650098C110 /* Info.plist */,
-				462A52BB256E62000098C110 /* Constants.swift */,
-				462A52AC256E5F4B0098C110 /* NetworkManager.swift */,
-				462A52B1256E60970098C110 /* WeatherModel.swift */,
-				462A52B6256E60A80098C110 /* WAError.swift */,
-				462A52C0256E6C270098C110 /* ErrorModel.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -132,10 +125,9 @@
 		462A528A256E5C650098C110 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				462A528B256E5C650098C110 /* WeatherAppTests.swift */,
+				462A52DC256E9D560098C110 /* Network */,
+				462A52E3256E9D5D0098C110 /* Mocks */,
 				462A528D256E5C650098C110 /* Info.plist */,
-				462A52A7256E5EFB0098C110 /* NetworkManagerTests.swift */,
-				462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -147,6 +139,75 @@
 				462A5298256E5C650098C110 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		462A52CD256E9CFA0098C110 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				462A52B6256E60A80098C110 /* WAError.swift */,
+				462A52B1256E60970098C110 /* WeatherModel.swift */,
+				462A52C0256E6C270098C110 /* ErrorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		462A52D1256E9D100098C110 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				462A52AC256E5F4B0098C110 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		462A52D2256E9D1C0098C110 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				462A52BB256E62000098C110 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		462A52D6256E9D2D0098C110 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				462A5274256E5C630098C110 /* AppDelegate.swift */,
+				462A5276256E5C630098C110 /* SceneDelegate.swift */,
+				462A527D256E5C650098C110 /* Assets.xcassets */,
+				462A527F256E5C650098C110 /* LaunchScreen.storyboard */,
+			);
+			path = "\U0010Supporting Files";
+			sourceTree = "<group>";
+		};
+		462A52D7256E9D370098C110 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				462A5278256E5C630098C110 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		462A52DB256E9D450098C110 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				462A527A256E5C630098C110 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		462A52DC256E9D560098C110 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				462A52A7256E5EFB0098C110 /* NetworkManagerTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		462A52E3256E9D5D0098C110 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +357,6 @@
 			files = (
 				462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */,
 				462A52A8256E5EFB0098C110 /* NetworkManagerTests.swift in Sources */,
-				462A528C256E5C650098C110 /* WeatherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
