@@ -10,9 +10,12 @@ import Foundation
 class NetworkManager {
     
     private var apiKey: String
+    private var urlSession: URLSession
     
-    init(apiKey: String) {
+    
+    init(apiKey: String, urlSession: URLSession = .shared) {
         self.apiKey = apiKey
+        self.urlSession = urlSession
     }
     
     func getCurrentWeather(city: String, completion: @escaping(WeatherModel?, WAError?) -> Void) {
@@ -24,7 +27,7 @@ class NetworkManager {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = urlSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
                 //TODO: Handle error
@@ -36,7 +39,7 @@ class NetworkManager {
                     if let data = data, let responseModel = try? JSONDecoder().decode(WeatherModel.self, from: data) {
                         completion(responseModel,nil)
                     } else {
-                        //TODO: invalid response model error handle
+                        completion(nil,WAError.invalidResponseModel)
                     }
                 } else {
                     if let data = data, let errorModel = try? JSONDecoder().decode(ErrorModel.self, from: data) {
@@ -53,7 +56,7 @@ class NetworkManager {
                             completion(nil,WAError.invalidResponseCode)
                         }
                     } else {
-                        //TODO: invalid error model error handle
+                        completion(nil,WAError.invalidErrorResponseModel)
                     }
                 }
             }

@@ -21,6 +21,7 @@
 		462A52B7256E60A80098C110 /* WAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52B6256E60A80098C110 /* WAError.swift */; };
 		462A52BC256E62000098C110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52BB256E62000098C110 /* Constants.swift */; };
 		462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C0256E6C270098C110 /* ErrorModel.swift */; };
+		462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		462A52B6256E60A80098C110 /* WAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAError.swift; sourceTree = "<group>"; };
 		462A52BB256E62000098C110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		462A52C0256E6C270098C110 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				462A528B256E5C650098C110 /* WeatherAppTests.swift */,
 				462A528D256E5C650098C110 /* Info.plist */,
 				462A52A7256E5EFB0098C110 /* NetworkManagerTests.swift */,
+				462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */,
 				462A52A8256E5EFB0098C110 /* NetworkManagerTests.swift in Sources */,
 				462A528C256E5C650098C110 /* WeatherAppTests.swift in Sources */,
 			);

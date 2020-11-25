@@ -14,4 +14,6 @@ enum WAError: String {
     case invalidResponseCode = "Response code is invalid."
     case invalidCityParameter = "No location found matching your typed city."
     case emptyCityParameter = "City parameter not provided."
+    case invalidResponseModel = "The response is invalid format."
+    case invalidErrorResponseModel = "The error response is invalid format."
 }
