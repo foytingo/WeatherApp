@@ -38,7 +38,7 @@ class NetworkManagerTests: XCTestCase {
         let expectation = self.expectation(description: "Network Manager Response Expectation")
         //Act
         
-        sut.getCurrentWeather(city: desiredCity) { (responseModel, error) in
+        sut.getCurrentWeather(city: desiredCity) { (responseModel, error)  in
             
             //Asert
             XCTAssertEqual(responseModel?.location.name, desiredCity, "The getCurrentWeather() method should return desired city for successfull request")
@@ -61,7 +61,7 @@ class NetworkManagerTests: XCTestCase {
         sut.getCurrentWeather(city: desiredCity) { (responseModel, error) in
             
             //Assert
-            XCTAssertEqual(error, WAError.apiKeyError)
+            XCTAssertEqual(error, WAError.invalidApiKey)
             XCTAssertNil(responseModel, "The getCurrentWeather() method should return nil responsModel for invalidKey")
             
             expectation.fulfill()
@@ -70,5 +70,21 @@ class NetworkManagerTests: XCTestCase {
     }
     
     
+    func testNetworkManager_WhenEmptyApiKey_ReturnError() {
+        let sut = NetworkManager(apiKey: "")
+        let desiredCity = "London"
+        let expectation = self.expectation(description: "Network Manager Expectation")
+        
+        //Act
+        sut.getCurrentWeather(city: desiredCity) { (responseModel, error) in
+            
+            //Assert
+            XCTAssertEqual(error, WAError.emptyApiKey)
+            XCTAssertNil(responseModel, "The getCurrentWeather() method should return nil responsModel for invalidKey")
+            
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 5)
+    }
     
 }

@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum WAError {
+enum WAError: String {
     
-    case apiKeyError
+    case emptyApiKey = "Api key not provided."
+    case invalidApiKey = "Api key provided is invalid."
+    case invalidResponseCode = "Response code is invalid."
 }

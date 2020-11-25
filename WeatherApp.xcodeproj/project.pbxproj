@@ -20,6 +20,7 @@
 		462A52B2256E60970098C110 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52B1256E60970098C110 /* WeatherModel.swift */; };
 		462A52B7256E60A80098C110 /* WAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52B6256E60A80098C110 /* WAError.swift */; };
 		462A52BC256E62000098C110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52BB256E62000098C110 /* Constants.swift */; };
+		462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C0256E6C270098C110 /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		462A52B1256E60970098C110 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		462A52B6256E60A80098C110 /* WAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAError.swift; sourceTree = "<group>"; };
 		462A52BB256E62000098C110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		462A52C0256E6C270098C110 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				462A52AC256E5F4B0098C110 /* NetworkManager.swift */,
 				462A52B1256E60970098C110 /* WeatherModel.swift */,
 				462A52B6256E60A80098C110 /* WAError.swift */,
+				462A52C0256E6C270098C110 /* ErrorModel.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				462A5275256E5C630098C110 /* AppDelegate.swift in Sources */,
 				462A52BC256E62000098C110 /* Constants.swift in Sources */,
 				462A5277256E5C630098C110 /* SceneDelegate.swift in Sources */,
+				462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */,
 				462A52B2256E60970098C110 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

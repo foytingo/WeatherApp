@@ -31,26 +31,27 @@ class NetworkManager {
                 return
             }
             
-            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                if response.statusCode == 401 {
-                    completion(nil,WAError.apiKeyError)
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 200 {
+                    if let data = data, let responseModel = try? JSONDecoder().decode(WeatherModel.self, from: data) {
+                        completion(responseModel,nil)
+                    } else {
+                        //TODO: invalid response model error handle
+                    }
+                } else {
+                    if let data = data, let errorModel = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                        switch errorModel.error.code {
+                        case 1002:
+                            completion(nil,WAError.emptyApiKey)
+                        case 2006:
+                            completion(nil, WAError.invalidApiKey)
+                        default:
+                            completion(nil,WAError.invalidResponseCode)
+                        }
+                    } else {
+                        //TODO: invalid error model error handle
+                    }
                 }
-                return
-            }
-            
-            guard let data = data else {
-                //TODO: Handle data error
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let currentWeather = try decoder.decode(WeatherModel
-                                                            .self, from: data)
-                completion(currentWeather, nil)
-            } catch {
-                //TODO: competion error
             }
         }
         
