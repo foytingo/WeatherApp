@@ -32,7 +32,10 @@ class NetworkManager {
             }
             
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                //TODO: Handle response
+                if response.statusCode == 401 {
+                    completion(nil,WAError.apiKeyError)
+                }
+                return
             }
             
             guard let data = data else {

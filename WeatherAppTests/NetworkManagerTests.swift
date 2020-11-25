@@ -47,8 +47,28 @@ class NetworkManagerTests: XCTestCase {
         }
         
         self.wait(for: [expectation], timeout: 5)
-        //Assert
     }
 
+    
+    func testNetworkManager_WhenInvalidApiKey_RetunError() {
+        //Arrange
+        
+        let sut = NetworkManager(apiKey: "sasdg234dfg")
+        let desiredCity = "London"
+        let expectation = self.expectation(description: "Network Manager Expectation")
+        
+        //Act
+        sut.getCurrentWeather(city: desiredCity) { (responseModel, error) in
+            
+            //Assert
+            XCTAssertEqual(error, WAError.apiKeyError)
+            XCTAssertNil(responseModel, "The getCurrentWeather() method should return nil responsModel for invalidKey")
+            
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 5)
+    }
+    
+    
     
 }
