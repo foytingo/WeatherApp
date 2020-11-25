@@ -29,8 +29,8 @@ class NetworkManager {
         
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             
-            if error != nil {
-                //TODO: Handle error
+            if let requestError = error {
+                completion(nil, WAError.failedRequest(description: requestError.localizedDescription))
                 return
             }
             

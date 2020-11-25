@@ -8,10 +8,10 @@
 import Foundation
 
 struct ErrorModel: Codable {
-    let error: Error
+    let error: Errore
     
 }
 
-struct Error: Codable {
+struct Errore: Codable {
     let code: Int
 }

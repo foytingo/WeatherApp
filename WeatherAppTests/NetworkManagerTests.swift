@@ -161,4 +161,31 @@ class NetworkManagerTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 5)
     }
+    
+    
+    func testNetworkManager_WhenURLRequestFails_ReturnsErrorMessage() {
+        //Arrange
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: config)
+        
+        let expectation = self.expectation(description: "A failed request expectation")
+        let errorDescription = "A localized description of an error"
+        MockURLProtocol.error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: errorDescription])
+        
+        let sut = NetworkManager(apiKey: Constants.apiKey, urlSession: urlSession)
+        //Act
+        sut.getCurrentWeather(city: desiredCity) { (responseModel, error) in
+            
+            //Assert
+            
+            XCTAssertEqual(error, WAError.failedRequest(description: errorDescription))
+            
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 5)
+        
+        
+    }
 }
