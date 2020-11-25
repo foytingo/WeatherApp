@@ -45,6 +45,10 @@ class NetworkManager {
                             completion(nil,WAError.emptyApiKey)
                         case 2006:
                             completion(nil, WAError.invalidApiKey)
+                        case 1006:
+                            completion(nil, WAError.invalidCityParameter)
+                        case 1003:
+                            completion(nil, WAError.emptyCityParameter)
                         default:
                             completion(nil,WAError.invalidResponseCode)
                         }
