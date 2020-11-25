@@ -29,6 +29,26 @@ class NetworkManagerTests: XCTestCase {
     }
 
     
+    func testNetworkManager_CheckBaseUrl_EqualToConstants() {
+        //Arrange
+        let baseURL = "https://api.weatherapi.com/v1/"
+        //Act
+        let baseURLFromConstans = Constants.baseURL
+        //Arrange
+        XCTAssertEqual(baseURL, baseURLFromConstans, "The Constans.baseUrl did not correct.")
+    }
+    
+    
+    func testNetworkManager_CheckApi_EqualToConstants() {
+        //Arrange
+        let apiKey = "166438647dbc4e77af893534202311"
+        //Act
+        let apiKeyFromConstans = Constants.apiKey
+        //Arrange
+        XCTAssertEqual(apiKey, apiKeyFromConstans, "The Constans.apiKey did not correct.")
+    }
+    
+    
     func testNetworkManager_WhenValidApiKeyAndValidCityName_ReturnCurrentWeatherOfDesiredCity() {
         //Arrange
         let expectation = self.expectation(description: "getCurrentWeather() method successfully return desiredCity.")

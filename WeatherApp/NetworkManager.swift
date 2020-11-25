@@ -18,14 +18,12 @@ class NetworkManager {
         self.urlSession = urlSession
     }
     
+    
     func getCurrentWeather(city: String, completion: @escaping(WeatherModel?, WAError?) -> Void) {
-        //"https://api.weatherapi.com/v1/current.json?key=166438647dbc4e77af893534202311&q=London"
+
         let urlString = "\(Constants.baseURL)current.json?key=\(apiKey)&q=\(city)"
         
-        guard let url = URL(string: urlString) else {
-            //TODO: Create unit test to test that a specific error message is returned is nil
-            return
-        }
+        let url = URL(string: urlString)!
         
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             
