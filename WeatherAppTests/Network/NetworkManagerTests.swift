@@ -12,6 +12,7 @@ class NetworkManagerTests: XCTestCase {
 
     var sut: NetworkManager!
     var desiredCity: String!
+    var londonCoordinates: (lat: String, lon: String)!
     
     override func setUpWithError() throws {
         let config = URLSessionConfiguration.ephemeral
@@ -19,6 +20,8 @@ class NetworkManagerTests: XCTestCase {
         let urlSession = URLSession(configuration: config)
         sut = NetworkManager(apiKey: Constants.apiKey, urlSession: urlSession)
         desiredCity = "London"
+        londonCoordinates = (lat: "51.52", lon: "-0.11")
+        
     }
 
     override func tearDownWithError() throws {
@@ -26,6 +29,7 @@ class NetworkManagerTests: XCTestCase {
         desiredCity = nil
         MockURLProtocol.stubResponse = nil
         MockURLProtocol.error = nil
+        londonCoordinates = nil
     }
 
     
@@ -57,14 +61,31 @@ class NetworkManagerTests: XCTestCase {
         //Act
         sut.getCurrentWeather(city: desiredCity) { (responseModel, error)  in
             //Asert
-            XCTAssertEqual(responseModel?.location.name, self.desiredCity, "The getCurrentWeather() method did not return desired city for successfull request")
+            XCTAssertEqual(responseModel?.location.name, self.desiredCity, "The getCurrentWeather() method did not return desired city for successfull request city name.")
             XCTAssertNil(error, "The getCurrentWeather() method did not return nil error for successful request.")
             
             expectation.fulfill()
         }
         self.wait(for: [expectation], timeout: 5)
     }
-
+    
+    
+    func testNetworkMManager_WhenValidApiKeyAndValidCoordinatess_ReturnCurrentWeatherOfDesiredCity() {
+        //Arrange
+        let expectation = self.expectation(description: "getCurrentWeather() method successfully return desiredCity.")
+        let sut = NetworkManager(apiKey: Constants.apiKey)
+        let londonCoordinateString = "\(londonCoordinates.lat),\(londonCoordinates.lon)"
+        
+        //Act
+        sut.getCurrentWeather(city: londonCoordinateString) { (responseModel, error) in
+            //Assert
+            XCTAssertEqual(responseModel?.location.name, self.desiredCity, "The getCurrentWeather() method did not return desired city for successfull request with city coordinate")
+            XCTAssertNil(error, "The getCurrentWeather() method did not return nil error for successful request.")
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 5)
+    }
+    
     
     func testNetworkManager_WhenInvalidApiKey_RetunError() {
         //Arrange
@@ -117,6 +138,7 @@ class NetworkManagerTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 5)
     }
+    
     
     func testNetworkManager_WhenEmptyCityParamater_ReturnError() {
         //Arrange
