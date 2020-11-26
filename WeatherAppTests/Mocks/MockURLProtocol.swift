@@ -20,8 +20,6 @@ class MockURLProtocol: URLProtocol {
         return request
     }
     
-    
-    
     override func startLoading() {
         
         if let requestError = MockURLProtocol.error {

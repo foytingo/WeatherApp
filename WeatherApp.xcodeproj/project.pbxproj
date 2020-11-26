@@ -21,6 +21,12 @@
 		462A52BC256E62000098C110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52BB256E62000098C110 /* Constants.swift */; };
 		462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C0256E6C270098C110 /* ErrorModel.swift */; };
 		462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */; };
+		46948004256FB0F60016F636 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948003256FB0F60016F636 /* PresenterTests.swift */; };
+		46948009256FB46A0016F636 /* MockWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948008256FB46A0016F636 /* MockWebService.swift */; };
+		4694800E256FB4940016F636 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694800D256FB4940016F636 /* Presenter.swift */; };
+		46948013256FB5D80016F636 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948012256FB5D80016F636 /* WebServiceProtocol.swift */; };
+		46948018256FB9650016F636 /* MockViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948017256FB9650016F636 /* MockViewDelegate.swift */; };
+		4694801D256FB9E20016F636 /* ViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694801C256FB9E20016F636 /* ViewDelegateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		462A52BB256E62000098C110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		462A52C0256E6C270098C110 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		46948003256FB0F60016F636 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
+		46948008256FB46A0016F636 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
+		4694800D256FB4940016F636 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		46948012256FB5D80016F636 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
+		46948017256FB9650016F636 /* MockViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewDelegate.swift; sourceTree = "<group>"; };
+		4694801C256FB9E20016F636 /* ViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +123,14 @@
 		462A5273256E5C630098C110 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				462A52D6256E9D2D0098C110 /* Supporting Files */,
+				46948021256FBE6F0016F636 /* Protocols */,
+				46948025256FBE760016F636 /* Presenters */,
 				462A52D7256E9D370098C110 /* Controllers */,
 				462A52DB256E9D450098C110 /* Storyboards */,
 				462A52D2256E9D1C0098C110 /* Helpers */,
 				462A52D1256E9D100098C110 /* Network */,
 				462A52CD256E9CFA0098C110 /* Models */,
+				462A52D6256E9D2D0098C110 /* Supporting Files */,
 				462A5282256E5C650098C110 /* Info.plist */,
 			);
 			path = WeatherApp;
@@ -125,6 +139,7 @@
 		462A528A256E5C650098C110 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				46948029256FBE830016F636 /* Presenter */,
 				462A52DC256E9D560098C110 /* Network */,
 				462A52E3256E9D5D0098C110 /* Mocks */,
 				462A528D256E5C650098C110 /* Info.plist */,
@@ -206,8 +221,35 @@
 			isa = PBXGroup;
 			children = (
 				462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */,
+				46948008256FB46A0016F636 /* MockWebService.swift */,
+				46948017256FB9650016F636 /* MockViewDelegate.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		46948021256FBE6F0016F636 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				46948012256FB5D80016F636 /* WebServiceProtocol.swift */,
+				4694801C256FB9E20016F636 /* ViewDelegateProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		46948025256FBE760016F636 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				4694800D256FB4940016F636 /* Presenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		46948029256FBE830016F636 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				46948003256FB0F60016F636 /* PresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,13 +382,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4694800E256FB4940016F636 /* Presenter.swift in Sources */,
 				462A52AD256E5F4B0098C110 /* NetworkManager.swift in Sources */,
 				462A5279256E5C630098C110 /* ViewController.swift in Sources */,
 				462A52B7256E60A80098C110 /* WAError.swift in Sources */,
 				462A5275256E5C630098C110 /* AppDelegate.swift in Sources */,
 				462A52BC256E62000098C110 /* Constants.swift in Sources */,
+				46948013256FB5D80016F636 /* WebServiceProtocol.swift in Sources */,
 				462A5277256E5C630098C110 /* SceneDelegate.swift in Sources */,
 				462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */,
+				4694801D256FB9E20016F636 /* ViewDelegateProtocol.swift in Sources */,
 				462A52B2256E60970098C110 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,8 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46948009256FB46A0016F636 /* MockWebService.swift in Sources */,
 				462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */,
+				46948018256FB9650016F636 /* MockViewDelegate.swift in Sources */,
 				462A52A8256E5EFB0098C110 /* NetworkManagerTests.swift in Sources */,
+				46948004256FB0F60016F636 /* PresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,17 +7,15 @@
 
 import Foundation
 
-class NetworkManager {
+class NetworkManager: WebServiceProtocol {
     
     private var apiKey: String
     private var urlSession: URLSession
-    
     
     init(apiKey: String, urlSession: URLSession = .shared) {
         self.apiKey = apiKey
         self.urlSession = urlSession
     }
-    
     
     func getCurrentWeather(city: String, completion: @escaping(WeatherModel?, WAError?) -> Void) {
 

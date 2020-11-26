@@ -21,7 +21,6 @@ class NetworkManagerTests: XCTestCase {
         sut = NetworkManager(apiKey: Constants.apiKey, urlSession: urlSession)
         desiredCity = "London"
         londonCoordinates = (lat: "51.52", lon: "-0.11")
-        
     }
 
     override func tearDownWithError() throws {
