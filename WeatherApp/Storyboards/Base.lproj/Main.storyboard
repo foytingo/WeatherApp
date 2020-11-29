@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search with city name." translatesAutoresizingMaskIntoConstraints="NO" id="zt0-JY-gYy">
+                                <rect key="frame" x="0.0" y="94" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="address-level2"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfC-Cc-YFO">
+                                <rect key="frame" x="44" y="194" width="302" height="52.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 °C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x54-wd-Sli">
+                                <rect key="frame" x="44" y="258.66666666666669" width="302" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRS-Dw-HSF">
+                                <rect key="frame" x="271" y="302.66666666666669" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="K8E-4r-pQm"/>
+                                    <constraint firstAttribute="height" constant="75" id="syl-WT-kug"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zt0-JY-gYy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="25d-3G-hIe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uRS-Dw-HSF" secondAttribute="trailing" constant="44" id="35Q-Fw-szO"/>
+                            <constraint firstItem="zt0-JY-gYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Agz-6L-g3c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BfC-Cc-YFO" secondAttribute="trailing" constant="44" id="WqV-Ie-b5K"/>
+                            <constraint firstItem="x54-wd-Sli" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="b03-IQ-RJy"/>
+                            <constraint firstItem="uRS-Dw-HSF" firstAttribute="top" secondItem="x54-wd-Sli" secondAttribute="bottom" constant="12" id="b8d-hd-BHu"/>
+                            <constraint firstItem="x54-wd-Sli" firstAttribute="top" secondItem="BfC-Cc-YFO" secondAttribute="bottom" constant="12" id="dyU-GQ-f2f"/>
+                            <constraint firstItem="BfC-Cc-YFO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="m4i-Wb-WkH"/>
+                            <constraint firstItem="BfC-Cc-YFO" firstAttribute="top" secondItem="zt0-JY-gYy" secondAttribute="bottom" constant="44" id="uzW-XF-t7u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x54-wd-Sli" secondAttribute="trailing" constant="44" id="wnz-m2-brQ"/>
+                            <constraint firstItem="zt0-JY-gYy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xIc-nD-76B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="BfC-Cc-YFO" id="F05-pt-gef"/>
+                        <outlet property="currentDegreeLabel" destination="x54-wd-Sli" id="YNR-qd-jPc"/>
+                        <outlet property="searchBar" destination="zt0-JY-gYy" id="iXe-CI-lNK"/>
+                        <outlet property="weatherImageView" destination="uRS-Dw-HSF" id="UWN-0l-tTu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-220" y="81.753554502369667"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

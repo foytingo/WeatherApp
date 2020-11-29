@@ -21,6 +21,7 @@
 		462A52BC256E62000098C110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52BB256E62000098C110 /* Constants.swift */; };
 		462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C0256E6C270098C110 /* ErrorModel.swift */; };
 		462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */; };
+		4692FA132572561F00FE34AF /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4692FA122572561F00FE34AF /* ControllerTests.swift */; };
 		46948004256FB0F60016F636 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948003256FB0F60016F636 /* PresenterTests.swift */; };
 		46948009256FB46A0016F636 /* MockWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948008256FB46A0016F636 /* MockWebService.swift */; };
 		4694800E256FB4940016F636 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694800D256FB4940016F636 /* Presenter.swift */; };
@@ -67,6 +68,7 @@
 		462A52BB256E62000098C110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		462A52C0256E6C270098C110 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		462A52C5256E7EFA0098C110 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		4692FA122572561F00FE34AF /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
 		46948003256FB0F60016F636 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		46948008256FB46A0016F636 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
 		4694800D256FB4940016F636 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				46948029256FBE830016F636 /* Presenter */,
 				462A52DC256E9D560098C110 /* Network */,
+				4692FA172572566700FE34AF /* Controllers */,
 				462A52E3256E9D5D0098C110 /* Mocks */,
 				462A528D256E5C650098C110 /* Info.plist */,
 			);
@@ -225,6 +228,14 @@
 				46948017256FB9650016F636 /* MockViewDelegate.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		4692FA172572566700FE34AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4692FA122572561F00FE34AF /* ControllerTests.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		46948021256FBE6F0016F636 /* Protocols */ = {
@@ -401,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46948009256FB46A0016F636 /* MockWebService.swift in Sources */,
+				4692FA132572561F00FE34AF /* ControllerTests.swift in Sources */,
 				462A52C6256E7EFA0098C110 /* MockURLProtocol.swift in Sources */,
 				46948018256FB9650016F636 /* MockViewDelegate.swift in Sources */,
 				462A52A8256E5EFB0098C110 /* NetworkManagerTests.swift in Sources */,
