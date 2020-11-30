@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Presenter {
+class Presenter: PresenterProtocol {
     
     private var webService: WebServiceProtocol
     private weak var delegate: ViewDelegateProtocol?
     
-    init(webService: WebServiceProtocol, delegate: ViewDelegateProtocol) {
+    required init(webService: WebServiceProtocol, delegate: ViewDelegateProtocol) {
         self.webService = webService
         self.delegate = delegate
     }

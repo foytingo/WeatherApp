@@ -8,16 +8,30 @@
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
+    
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     
-    var desiredCity: String?
+    var presenter: PresenterProtocol?
+    
+    var desiredCity: String? {
+        didSet {
+            presenter?.processGetCurrentWeather(city: desiredCity ?? "")
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if presenter == nil {
+            let webService = NetworkManager(apiKey: Constants.apiKey)
+            presenter = Presenter(webService: webService, delegate: self)
+        }
+        
         cityNameLabel.text = ""
         currentDegreeLabel.text = ""
         weatherImageView.image = nil
@@ -43,3 +57,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
 }
 
+extension ViewController: ViewDelegateProtocol {
+    func successfullGetCurrentWeather() {
+        //TODO
+    }
+    
+    func errorHandler(error: WAError) {
+        //TODO
+    }
+    
+    
+}
