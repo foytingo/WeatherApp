@@ -21,7 +21,7 @@ class MockWebService: WebServiceProtocol {
             let error = WAError.failedRequest(description: "Current weather did not get successfuly.")
             completion(nil, error)
         } else {
-            let responseModel = WeatherModel(location: Location(name: "London"))
+            let responseModel = WeatherModel(location: Location(name: "London"), current: nil)
             completion(responseModel, nil)
         }
     }

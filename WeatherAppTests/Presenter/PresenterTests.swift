@@ -50,7 +50,7 @@ class PresenterTests: XCTestCase {
         self.wait(for: [successExpectation], timeout: 5)
         
         //Asssert
-        XCTAssertEqual(mockViewDelegate.successfulSignupCounter, 1, "The successfullgetCurrentWeather() method was called more than one.")
+        XCTAssertEqual(mockViewDelegate.successfulGetCurrentWeatherCounter, 1, "The successfullgetCurrentWeather() method was called more than one.")
     }
     
     
@@ -65,8 +65,9 @@ class PresenterTests: XCTestCase {
         self.wait(for: [errorExpectation], timeout: 5)
         
         //Assert
-        XCTAssertEqual(mockViewDelegate.successfulSignupCounter, 0, "The succesfullGetCurrentWeather() was called.")
+        XCTAssertEqual(mockViewDelegate.successfulGetCurrentWeatherCounter, 0, "The succesfullGetCurrentWeather() was called.")
         XCTAssertEqual(mockViewDelegate.errorHandlerCounter, 1, "The errorHandle() method called more than one.")
         XCTAssertNotNil(mockViewDelegate.error, "The errorHand() method did not called so error is nil.")
     }
+    
 }

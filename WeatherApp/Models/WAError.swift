@@ -16,6 +16,7 @@ enum WAError: LocalizedError, Equatable {
     case emptyCityParameter
     case invalidResponseModel
     case invalidErrorResponseModel
+    case cantGetCurrentLocation
     case failedRequest(description: String)
     
     var errorDescription: String? {
@@ -34,6 +35,8 @@ enum WAError: LocalizedError, Equatable {
             return "The response is invalid format."
         case .invalidErrorResponseModel:
             return "The error response is invalid format."
+        case .cantGetCurrentLocation:
+            return "The current location cant get with GPS."
         case .failedRequest(let description):
             return description
         }

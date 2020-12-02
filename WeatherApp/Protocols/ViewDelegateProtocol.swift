@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ViewDelegateProtocol: class {
-    func successfullGetCurrentWeather()
+    func successfullGetCurrentWeather(model: WeatherModel)
     func errorHandler(error: WAError)
 }

@@ -9,8 +9,10 @@ import Foundation
 @testable import WeatherApp
 
 class MockPresenter: PresenterProtocol {
-    
+
+
     var processGetCurrentWeatherCalled: Bool = false
+    var processGetCurrentLocationCallled: Bool = false
     
     required init(webService: WebServiceProtocol, delegate: ViewDelegateProtocol) {
         //TODO

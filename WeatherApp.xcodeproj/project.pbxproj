@@ -30,6 +30,7 @@
 		46948013256FB5D80016F636 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948012256FB5D80016F636 /* WebServiceProtocol.swift */; };
 		46948018256FB9650016F636 /* MockViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46948017256FB9650016F636 /* MockViewDelegate.swift */; };
 		4694801D256FB9E20016F636 /* ViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694801C256FB9E20016F636 /* ViewDelegateProtocol.swift */; };
+		46F859CC2577A889007EB790 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F859CB2577A889007EB790 /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		46948012256FB5D80016F636 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
 		46948017256FB9650016F636 /* MockViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewDelegate.swift; sourceTree = "<group>"; };
 		4694801C256FB9E20016F636 /* ViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegateProtocol.swift; sourceTree = "<group>"; };
+		46F859CB2577A889007EB790 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				462A52CD256E9CFA0098C110 /* Models */,
 				462A52D6256E9D2D0098C110 /* Supporting Files */,
 				462A5282256E5C650098C110 /* Info.plist */,
+				46F859CB2577A889007EB790 /* UIImageView+Ext.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				462A52BC256E62000098C110 /* Constants.swift in Sources */,
 				46948013256FB5D80016F636 /* WebServiceProtocol.swift in Sources */,
 				462A5277256E5C630098C110 /* SceneDelegate.swift in Sources */,
+				46F859CC2577A889007EB790 /* UIImageView+Ext.swift in Sources */,
 				464E67092574E49400C07793 /* PresenterProtocol.swift in Sources */,
 				462A52C1256E6C280098C110 /* ErrorModel.swift in Sources */,
 				4694801D256FB9E20016F636 /* ViewDelegateProtocol.swift in Sources */,
@@ -595,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FP28BF586;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,6 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FP28BF586;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

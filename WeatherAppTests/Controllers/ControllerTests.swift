@@ -33,7 +33,6 @@ class ControllerTests: XCTestCase {
         let searchBar = try XCTUnwrap(sut.searchBar, "The searchbar is not connected to an IBOutlet.")
         
         //Act
-        
         //Assert
         XCTAssertEqual(searchBar.text, "", "SearchBar textfield was not empty when the view controller initially loaded.")
     }
@@ -76,6 +75,19 @@ class ControllerTests: XCTestCase {
         //Assert
         XCTAssertEqual(sut.desiredCity, desiredCity, "The searcbar text was not trimmed after search button tapped.")
     }
+    
+    
+    func testViewController_WhenSearhWithCityName_AfterSearchButtonReplaceWhiteSpace() {
+        //Arrange
+        sut.searchBar.text = "Sao Paulo"
+        
+        //Act
+        sut.searchBarSearchButtonClicked(sut.searchBar)
+        
+        //Assert
+        XCTAssertEqual(sut.desiredCity, "Sao%20Paulo", "The searcbar text was not trimmed after search button tapped.")
+    }
+    
     
     func testViewController_WhenSearchWithEmptyCityName_AfterSearchButtonTapped() {
         //Arrange
@@ -124,6 +136,28 @@ class ControllerTests: XCTestCase {
     }
     
     
+    
+    func testViewController_SearcbarCancel_DeleteSearchBarText() {
+        //Arrange
+        sut.searchBar.text = "London"
+        //Act
+        sut.searchBarCancelButtonClicked(sut.searchBar)
+        
+        //Assert
+        XCTAssertEqual(sut.searchBar.text, "", "The searchbar cancel button did not delete when tap cancel button")
+    }
+    
+    
+    func testViewController_SearcbarSearchButton_HideCancelButton() {
+        //Arrange
+        //Act
+        sut.searchBarSearchButtonClicked(sut.searchBar)
+        
+        //Assert
+        XCTAssertFalse(sut.searchBar.showsCancelButton, "The searchbar cancel button did not hided when tap search button.")
+    }
+    
+    
     func testViewController_WhenCreated_HasLabelsIsEmpty() throws {
         //Arrange
         let cityNameLabel = try XCTUnwrap(sut.cityNameLabel, "The cityNameLabel is not connected to an IBOutlet.")
@@ -142,8 +176,8 @@ class ControllerTests: XCTestCase {
         //Act
         //Assert
         XCTAssertNil(weatherImageView.image, "The weatherImageView was not empty when the view controller initially loaded.")
-        
     }
-
+    
+    
 
 }

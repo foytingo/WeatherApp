@@ -10,14 +10,17 @@ import XCTest
 @testable import WeatherApp
 
 class MockViewDelegate: ViewDelegateProtocol {
+
+    
     
     var expectation: XCTestExpectation?
-    var successfulSignupCounter = 0
+    var successfulGetCurrentWeatherCounter = 0
+    var successfullGetCurrentLocationCounter = 0
     var errorHandlerCounter = 0
     var error: WAError?
     
-    func successfullGetCurrentWeather() {
-        successfulSignupCounter += 1
+    func successfullGetCurrentWeather(model: WeatherModel) {
+        successfulGetCurrentWeatherCounter += 1
         expectation?.fulfill()
     }
     
@@ -27,5 +30,4 @@ class MockViewDelegate: ViewDelegateProtocol {
         self.error = error
         expectation?.fulfill()
     }
-
 }
